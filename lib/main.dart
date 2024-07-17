@@ -24,14 +24,27 @@ class MyApp extends StatelessWidget {
 class HomeActivity extends StatelessWidget {
   const HomeActivity({super.key});
 
+  mySnackBar(message, ctx) {
+    return ScaffoldMessenger.of(ctx)
+        .showSnackBar(SnackBar(content: Text(message)));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('My Inventory'),
-        titleSpacing: 0,
-        centerTitle: true,
+        titleSpacing: 5,
+        centerTitle: false,
         toolbarHeight: 60,
+        elevation: 0,
+        actions: [
+          IconButton(
+              onPressed: () {
+                mySnackBar('This is comment', context);
+              },
+              icon: const Icon(Icons.comment))
+        ],
       ),
       body: const Text('This is body'),
     );
