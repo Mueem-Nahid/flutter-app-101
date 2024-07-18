@@ -55,6 +55,25 @@ class HomeActivity extends StatelessWidget {
         },
         child: const Icon(Icons.add),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 2,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.message), label: "Contact"),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+        ],
+        onTap: (int index) {
+          if (index == 0) {
+            mySnackBar('This is home', context);
+          }
+          if (index == 1) {
+            mySnackBar('This is message', context);
+          }
+          if (index == 2) {
+            mySnackBar('This is profile', context);
+          }
+        },
+      ),
     );
   }
 }
