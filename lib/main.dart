@@ -47,6 +47,14 @@ class HomeActivity extends StatelessWidget {
         ],
       ),
       body: const Text('This is body'),
+      floatingActionButton: FloatingActionButton(
+        elevation: 10,
+        backgroundColor: Colors.orangeAccent,
+        onPressed: () {
+          mySnackBar('This is floating Action Button', context);
+        },
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
