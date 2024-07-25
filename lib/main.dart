@@ -48,7 +48,6 @@ class HomeActivity extends StatelessWidget {
               icon: const Icon(Icons.comment))
         ],
       ),
-      body: const Text('This is body'),
       floatingActionButton: FloatingActionButton(
         elevation: 10,
         backgroundColor: Colors.orangeAccent,
@@ -115,6 +114,61 @@ class HomeActivity extends StatelessWidget {
                 mySnackBar('This is Contact', context);
               },
             )
+          ],
+        ),
+      ),
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  Expanded(
+                    child: Container(
+                      color: Colors.red,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Text('Left', textAlign: TextAlign.center),
+                          Text('Left', textAlign: TextAlign.center),
+                          Text('Left', textAlign: TextAlign.center),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      color: Colors.green,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: <Widget>[
+                          Text('Right', textAlign: TextAlign.center),
+                          Text('Right', textAlign: TextAlign.center),
+                          Text('Right', textAlign: TextAlign.center),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Container(
+                color: Colors.blue,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text('Bottom', textAlign: TextAlign.center),
+                    Text('Bottom', textAlign: TextAlign.center),
+                    Text('Bottom', textAlign: TextAlign.center),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
