@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/rendering.dart';
 
 main() {
   runApp(const MyApp());
@@ -73,6 +75,48 @@ class HomeActivity extends StatelessWidget {
             mySnackBar('This is profile', context);
           }
         },
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            const DrawerHeader(
+                margin: EdgeInsets.only(bottom: 0),
+                padding: EdgeInsets.all(0),
+                child: UserAccountsDrawerHeader(
+                  margin: EdgeInsets.only(bottom: 0),
+                  decoration: BoxDecoration(color: Colors.orangeAccent),
+                  accountName: Text('Mueem'),
+                  accountEmail: Text('abc@gmail.com'),
+                  currentAccountPicture: CircleAvatar(
+                    radius: 50.0,
+                    backgroundColor: Color(0xFF778899),
+                    backgroundImage: NetworkImage(
+                        'https://randomuser.me/api/portraits/men/15.jpg'),
+                  ),
+                )),
+            ListTile(
+              leading: const Icon(Icons.home),
+              title: const Text('Home'),
+              onTap: () {
+                mySnackBar('This is home', context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.message),
+              title: const Text('Message'),
+              onTap: () {
+                mySnackBar('This is Message', context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.contact_page),
+              title: const Text('Contact'),
+              onTap: () {
+                mySnackBar('This is Contact', context);
+              },
+            )
+          ],
+        ),
       ),
     );
   }
