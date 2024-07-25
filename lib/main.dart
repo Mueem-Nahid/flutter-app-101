@@ -117,7 +117,7 @@ class HomeActivity extends StatelessWidget {
           ],
         ),
       ),
-      body: SafeArea(
+      /*body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -171,7 +171,19 @@ class HomeActivity extends StatelessWidget {
             ),
           ],
         ),
-      ),
+      ),*/
+      body: Container(
+        height: 250,
+        width: 250,
+        alignment: Alignment.center,
+        margin: EdgeInsets.all(5),
+        padding: EdgeInsets.all(5),
+        child: Text('This is body'),
+        decoration: BoxDecoration(
+          color: Colors.white70,
+          border: Border.all(color: Colors.black, width: 2)
+        ),
+      )
     );
   }
 }
