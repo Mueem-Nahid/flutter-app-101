@@ -30,6 +30,14 @@ class HomeActivity extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    ButtonStyle buttonStyle = TextButton.styleFrom(
+      backgroundColor: Colors.amberAccent,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(10))
+      )
+    );
+
     return Scaffold(
         appBar: AppBar(
           title: const Text('My Inventory'),
@@ -170,24 +178,11 @@ class HomeActivity extends StatelessWidget {
           ],
         ),
       ),*/
-        // Container
-        /*body: Container(
-        height: 250,
-        width: 250,
-        alignment: Alignment.center,
-        margin: EdgeInsets.all(5),
-        padding: EdgeInsets.all(5),
-        child: Text('This is body'),
-        decoration: BoxDecoration(
-          color: Colors.white70,
-          border: Border.all(color: Colors.black, width: 2)
-        ),
-      ),*/
-        //   Row
+        // Row
         body: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Container(
+            /*Container(
               height: 100,
               width: 100,
               alignment: Alignment.center,
@@ -197,30 +192,19 @@ class HomeActivity extends StatelessWidget {
                   color: Colors.white70,
                   border: Border.all(color: Colors.black, width: 2)),
               child: const Text('Card 1'),
-            ),
-            Container(
-              height: 100,
-              width: 100,
-              alignment: Alignment.center,
-              margin: EdgeInsets.all(5),
-              padding: EdgeInsets.all(5),
-              decoration: BoxDecoration(
-                  color: Colors.white70,
-                  border: Border.all(color: Colors.black, width: 2)),
-              child: const Text('Card 2'),
-            ),
-            Container(
-              height: 100,
-              width: 100,
-              alignment: Alignment.center,
-              margin: EdgeInsets.all(5),
-              padding: EdgeInsets.all(5),
-              decoration: BoxDecoration(
-                  color: Colors.white70,
-                  border: Border.all(color: Colors.black, width: 2)),
-              child: const Text('Card 3'),
-            ),
+            ),*/
+            // button
+            TextButton(onPressed: () {
+              mySnackBar("Text Button pressed", context);
+            }, child: Text('Button 1'), style: buttonStyle,),
+            ElevatedButton(onPressed: () {
+              mySnackBar("ElevatedButton Button pressed", context);
+            }, child: Text('Button 2'), style: buttonStyle,),
+            OutlinedButton(onPressed: () {
+              mySnackBar("OutlinedButton Button pressed", context);
+            }, child: Text('Button 3'), style: buttonStyle,)
           ],
-        ));
+        )
+    );
   }
 }
