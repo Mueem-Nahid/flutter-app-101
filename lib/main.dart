@@ -37,15 +37,26 @@ class HomeActivity extends StatelessWidget {
             title: Text('Attention'),
             content: Text('Are you sure?'),
             actions: [
-              TextButton(onPressed: () {}, child: Text('Yes')),
               TextButton(
                   onPressed: () {
-                    Navigator.of(context).pop();
+                    myAlertDialogueAction(context, 'yes');
+                  },
+                  child: Text('Yes')),
+              TextButton(
+                  onPressed: () {
+                    myAlertDialogueAction(context, 'no');
                   },
                   child: Text('No'))
             ],
           ));
         });
+  }
+
+  myAlertDialogueAction(context, type) {
+    if (type == 'yes') {
+      mySnackBar('Item deleted.', context);
+    }
+    Navigator.of(context).pop();
   }
 
   @override
