@@ -177,69 +177,84 @@ class HomeActivity extends StatelessWidget {
       ),*/
         // Row
         body: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          // mainAxisAlignment: MainAxisAlignment.center,
+          // crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Column(
-              children: [
-                Container(
-                  height: 100,
-                  width: 100,
-                  alignment: Alignment.center,
-                  margin: EdgeInsets.all(5),
-                  padding: EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                      color: Colors.white70,
-                      border: Border.all(color: Colors.black, width: 2)),
-                  child: const Text('Card 1'),
+            Expanded(
+              flex: 4,
+              child: Container(
+                color: Colors.blue[400],
+                padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Container(
+                      height: 100,
+                      width: 100,
+                      alignment: Alignment.center,
+                      margin: EdgeInsets.all(5),
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                          color: Colors.white70,
+                          border: Border.all(color: Colors.black, width: 2)),
+                      child: const Text('Card 1'),
+                    ),
+                    Container(
+                      height: 100,
+                      width: 100,
+                      alignment: Alignment.center,
+                      margin: EdgeInsets.all(5),
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                          color: Colors.white70,
+                          border: Border.all(color: Colors.black, width: 2)),
+                      child: const Text('Card 2'),
+                    ),
+                    Container(
+                      height: 100,
+                      width: 100,
+                      alignment: Alignment.center,
+                      margin: EdgeInsets.all(5),
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                          color: Colors.white70,
+                          border: Border.all(color: Colors.black, width: 2)),
+                      child: const Text('Card 3'),
+                    ),
+                  ],
                 ),
-                Container(
-                  height: 100,
-                  width: 100,
-                  alignment: Alignment.center,
-                  margin: EdgeInsets.all(5),
-                  padding: EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                      color: Colors.white70,
-                      border: Border.all(color: Colors.black, width: 2)),
-                  child: const Text('Card 1'),
-                ),
-                Container(
-                  height: 100,
-                  width: 100,
-                  alignment: Alignment.center,
-                  margin: EdgeInsets.all(5),
-                  padding: EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                      color: Colors.white70,
-                      border: Border.all(color: Colors.black, width: 2)),
-                  child: const Text('Card 1'),
-                ),
-              ],
+              ),
             ),
-            Column(children: [
-              TextButton(
-                onPressed: () {
-                  mySnackBar("Text Button pressed", context);
-                },
-                child: Text('Button 1'),
-                style: buttonStyle,
+
+            Expanded(
+              flex: 3,
+              child: Container(
+                color: Colors.green[400],
+                child: Column(children: [
+                  TextButton(
+                    onPressed: () {
+                      mySnackBar("Text Button pressed", context);
+                    },
+                    child: Text('Button 1'),
+                    style: buttonStyle,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      mySnackBar("ElevatedButton Button pressed", context);
+                    },
+                    child: Text('Button 2'),
+                    style: buttonStyle,
+                  ),
+                  OutlinedButton(
+                    onPressed: () {
+                      mySnackBar("OutlinedButton Button pressed", context);
+                    },
+                    child: Text('Button 3'),
+                    style: buttonStyle,
+                  )
+                ]),
               ),
-              ElevatedButton(
-                onPressed: () {
-                  mySnackBar("ElevatedButton Button pressed", context);
-                },
-                child: Text('Button 2'),
-                style: buttonStyle,
-              ),
-              OutlinedButton(
-                onPressed: () {
-                  mySnackBar("OutlinedButton Button pressed", context);
-                },
-                child: Text('Button 3'),
-                style: buttonStyle,
-              )
-            ])
+            )
             // button
           ],
         ));
