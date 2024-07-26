@@ -28,9 +28,29 @@ class HomeActivity extends StatelessWidget {
         .showSnackBar(SnackBar(content: Text(message)));
   }
 
+  myAlertDialogue(ctx) {
+    return showDialog(
+        context: ctx,
+        builder: (BuildContext context) {
+          return Expanded(
+              child: AlertDialog(
+            title: Text('Attention'),
+            content: Text('Are you sure?'),
+            actions: [
+              TextButton(onPressed: () {}, child: Text('Yes')),
+              TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text('No'))
+            ],
+          ));
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
-    ButtonStyle buttonStyle = TextButton.styleFrom(
+    ButtonStyle buttonStyle = ElevatedButton.styleFrom(
         backgroundColor: Colors.amberAccent,
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(10))));
@@ -239,28 +259,12 @@ class HomeActivity extends StatelessWidget {
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            TextButton(
-                              onPressed: () {
-                                mySnackBar("Text Button pressed", context);
-                              },
-                              child: Text('Button 1'),
-                              style: buttonStyle,
-                            ),
                             ElevatedButton(
                               onPressed: () {
-                                mySnackBar(
-                                    "ElevatedButton Button pressed", context);
+                                myAlertDialogue(context);
                               },
-                              child: Text('Button 2'),
                               style: buttonStyle,
-                            ),
-                            OutlinedButton(
-                              onPressed: () {
-                                mySnackBar(
-                                    "OutlinedButton Button pressed", context);
-                              },
-                              child: Text('Button 3'),
-                              style: buttonStyle,
+                              child: const Text('Confirm dialogue'),
                             ),
                           ]),
                     ),
