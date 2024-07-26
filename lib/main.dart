@@ -236,58 +236,40 @@ class HomeActivity extends StatelessWidget {
                     flex: 1,
                     child: Container(
                       color: Colors.pink[600],
-                      child: Column(children: [
-                        TextButton(
-                          onPressed: () {
-                            mySnackBar("Text Button pressed", context);
-                          },
-                          child: Text('Button 1'),
-                          style: buttonStyle,
-                        ),
-                        ElevatedButton(
-                          onPressed: () {
-                            mySnackBar("ElevatedButton Button pressed", context);
-                          },
-                          child: Text('Button 2'),
-                          style: buttonStyle,
-                        ),
-                        OutlinedButton(
-                          onPressed: () {
-                            mySnackBar("OutlinedButton Button pressed", context);
-                          },
-                          child: Text('Button 3'),
-                          style: buttonStyle,
-                        ),
-                      ]),
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            TextButton(
+                              onPressed: () {
+                                mySnackBar("Text Button pressed", context);
+                              },
+                              child: Text('Button 1'),
+                              style: buttonStyle,
+                            ),
+                            ElevatedButton(
+                              onPressed: () {
+                                mySnackBar(
+                                    "ElevatedButton Button pressed", context);
+                              },
+                              child: Text('Button 2'),
+                              style: buttonStyle,
+                            ),
+                            OutlinedButton(
+                              onPressed: () {
+                                mySnackBar(
+                                    "OutlinedButton Button pressed", context);
+                              },
+                              child: Text('Button 3'),
+                              style: buttonStyle,
+                            ),
+                          ]),
                     ),
                   ),
                   Expanded(
                     flex: 1,
-                    child: Container(
-                      color: Colors.green[400],
-                      child: Column(children: [
-                        TextButton(
-                          onPressed: () {
-                            mySnackBar("Text Button pressed", context);
-                          },
-                          child: Text('Button 1'),
-                          style: buttonStyle,
-                        ),
-                        ElevatedButton(
-                          onPressed: () {
-                            mySnackBar("ElevatedButton Button pressed", context);
-                          },
-                          child: Text('Button 2'),
-                          style: buttonStyle,
-                        ),
-                        OutlinedButton(
-                          onPressed: () {
-                            mySnackBar("OutlinedButton Button pressed", context);
-                          },
-                          child: Text('Button 3'),
-                          style: buttonStyle,
-                        ),
-                      ]),
+                    child: Image.asset(
+                      'assets/images/batman-1.jpg',
+                      fit: BoxFit.cover,
                     ),
                   ),
                 ],
