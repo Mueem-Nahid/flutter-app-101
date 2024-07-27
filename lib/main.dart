@@ -287,6 +287,17 @@ class HomeActivity extends StatelessWidget {
                               style: buttonStyle,
                               child: const Text('Form'),
                             ),
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => MyListViewPage()),
+                                );
+                              },
+                              style: buttonStyle,
+                              child: const Text('List view'),
+                            ),
                           ]),
                     ),
                   ),
@@ -368,6 +379,19 @@ class MyFormPage extends StatelessWidget {
             )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class MyListViewPage extends StatelessWidget {
+  const MyListViewPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('List view'),
       ),
     );
   }
