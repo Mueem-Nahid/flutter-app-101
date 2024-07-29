@@ -425,7 +425,9 @@ class MyListViewActivity extends StatelessWidget {
       appBar: AppBar(
         title: const Text('List view'),
       ),
-      body: ListView.builder(
+      body: GridView.builder( // ListView || GridView
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2, crossAxisSpacing: 1),
           itemCount: listItems.length,
           itemBuilder: (context, index) {
             return GestureDetector(
