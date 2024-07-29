@@ -498,7 +498,7 @@ class MyTabBarActivity extends StatelessWidget {
           ),
           body: TabBarView(
             children: [
-              HomeFragment(),
+              HomeFragment('Passing data from one activity to another.'),
               FormFragment(),
               ListFragment(),
               CallFragment()
