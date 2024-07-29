@@ -4,6 +4,8 @@ import 'package:test_app/Fragment/CardFragment.dart';
 import 'package:test_app/Fragment/HomeFragment.dart';
 import 'package:test_app/Fragment/ListFragment.dart';
 
+import 'myId.dart';
+
 main() {
   runApp(const MyApp());
 }
@@ -313,6 +315,17 @@ class HomeActivity extends StatelessWidget {
                               },
                               style: buttonStyle,
                               child: const Text('Tab Activity'),
+                            ),
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => MyId()),
+                                );
+                              },
+                              style: buttonStyle,
+                              child: const Text('My ID'),
                             ),
                           ]),
                     ),
