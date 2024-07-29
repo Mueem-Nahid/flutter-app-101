@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/Fragment/CallFragment.dart';
-import 'package:test_app/Fragment/FormFragment.dart';
+import 'package:test_app/Fragment/CardFragment.dart';
 import 'package:test_app/Fragment/HomeFragment.dart';
 import 'package:test_app/Fragment/ListFragment.dart';
 
@@ -482,7 +482,7 @@ class MyTabBarActivity extends StatelessWidget {
                   text: 'Home',
                 ),
                 Tab(
-                  icon: Icon(Icons.input),
+                  icon: Icon(Icons.credit_card),
                   text: 'Form',
                 ),
                 Tab(
@@ -499,7 +499,7 @@ class MyTabBarActivity extends StatelessWidget {
           body: TabBarView(
             children: [
               HomeFragment('Passing data from one activity to another.'),
-              FormFragment(),
+              CardFragment(),
               ListFragment(),
               CallFragment()
             ],
