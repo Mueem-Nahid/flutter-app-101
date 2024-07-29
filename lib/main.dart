@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/Fragment/CallFragment.dart';
+import 'package:test_app/Fragment/FormFragment.dart';
+import 'package:test_app/Fragment/HomeFragment.dart';
+import 'package:test_app/Fragment/ListFragment.dart';
 
 main() {
   runApp(const MyApp());
@@ -297,7 +301,18 @@ class HomeActivity extends StatelessWidget {
                                 );
                               },
                               style: buttonStyle,
-                              child: const Text('List view'),
+                              child: const Text('List/Grid view'),
+                            ),
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => MyTabBarActivity()),
+                                );
+                              },
+                              style: buttonStyle,
+                              child: const Text('Tab Activity'),
                             ),
                           ]),
                     ),
@@ -425,9 +440,10 @@ class MyListViewActivity extends StatelessWidget {
       appBar: AppBar(
         title: const Text('List view'),
       ),
-      body: GridView.builder( // ListView || GridView
+      body: GridView.builder(
+          // ListView || GridView
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, crossAxisSpacing: 1),
+              crossAxisCount: 2, crossAxisSpacing: 1, childAspectRatio: 1.2),
           itemCount: listItems.length,
           itemBuilder: (context, index) {
             return GestureDetector(
@@ -446,5 +462,48 @@ class MyListViewActivity extends StatelessWidget {
             );
           }),
     );
+  }
+}
+
+class MyTabBarActivity extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+        length: 4,
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text('Tab Activity'),
+            bottom: const TabBar(
+              // isScrollable: true,
+              // tabAlignment: TabAlignment.start,
+              tabs: [
+                Tab(
+                  icon: Icon(Icons.home),
+                  text: 'Home',
+                ),
+                Tab(
+                  icon: Icon(Icons.input),
+                  text: 'Form',
+                ),
+                Tab(
+                  icon: Icon(Icons.list),
+                  text: 'List',
+                ),
+                Tab(
+                  icon: Icon(Icons.dialer_sip),
+                  text: 'Call',
+                ),
+              ],
+            ),
+          ),
+          body: TabBarView(
+            children: [
+              HomeFragment(),
+              FormFragment(),
+              ListFragment(),
+              CallFragment()
+            ],
+          ),
+        ));
   }
 }
