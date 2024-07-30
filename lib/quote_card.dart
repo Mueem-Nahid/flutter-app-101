@@ -9,7 +9,7 @@ class QuoteCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.fromLTRB(16, 16, 16, 0),
+      margin: const EdgeInsets.fromLTRB(16, 16, 16, 0),
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(
@@ -25,6 +25,14 @@ class QuoteCard extends StatelessWidget {
             Text(
               quote.author,
               style: TextStyle(fontSize: 14, color: Colors.grey[800]),
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            TextButton.icon(
+              onPressed: () {},
+              label: const Text('Delete'),
+              icon: const Icon(Icons.delete),
             )
           ],
         ),
