@@ -3,8 +3,9 @@ import 'quote.dart';
 
 class QuoteCard extends StatelessWidget {
   final Quote quote;
+  final VoidCallback delete;
 
-  QuoteCard({required this.quote});
+  QuoteCard({required this.quote, required this.delete});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,7 @@ class QuoteCard extends StatelessWidget {
               height: 8,
             ),
             TextButton.icon(
-              onPressed: () {},
+              onPressed: delete,
               label: const Text('Delete'),
               icon: const Icon(Icons.delete),
             )
