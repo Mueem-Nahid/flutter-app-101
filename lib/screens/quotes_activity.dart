@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'quote_card.dart';
+import '../components/quote_card.dart';
 
 class Quote {
   String text;
