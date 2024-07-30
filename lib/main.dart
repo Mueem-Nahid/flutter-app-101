@@ -3,6 +3,7 @@ import 'package:test_app/Fragment/CallFragment.dart';
 import 'package:test_app/Fragment/CardFragment.dart';
 import 'package:test_app/Fragment/HomeFragment.dart';
 import 'package:test_app/Fragment/ListFragment.dart';
+import 'package:test_app/quote.dart';
 
 import 'myId.dart';
 
@@ -269,7 +270,7 @@ class HomeActivity extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Expanded(
-                    flex: 1,
+                    flex: 2,
                     child: Container(
                       color: Colors.pink[600],
                       child: Column(
@@ -326,6 +327,17 @@ class HomeActivity extends StatelessWidget {
                               },
                               style: buttonStyle,
                               child: const Text('My ID'),
+                            ),
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => QuoteList()),
+                                );
+                              },
+                              style: buttonStyle,
+                              child: const Text('Quotes'),
                             ),
                           ]),
                     ),
