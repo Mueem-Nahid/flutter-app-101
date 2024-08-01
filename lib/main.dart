@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/screens/index.dart';
-import 'package:test_app/screens/world_time_app/choose_location.dart';
-import 'package:test_app/screens/world_time_app/home.dart';
-import 'package:test_app/screens/world_time_app/loading.dart';
+import 'package:test_app/screens/worldTimeApp/choose_location.dart';
+import 'package:test_app/screens/worldTimeApp/home.dart';
+import 'package:test_app/screens/worldTimeApp/loading.dart';
 
 main() {
   runApp(const MyApp());
@@ -22,9 +22,9 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => Loading(),
-        '/home': (context) => Home(),
-        '/location': (context) => ChooseLocation(),
+        '/': (context) => const Loading(),
+        '/home': (context) => const Home(),
+        '/location': (context) => const ChooseLocation(),
         '/index': (context) => IndexActivity(),
       },
     );

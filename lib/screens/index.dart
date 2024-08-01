@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/screens/quotes_activity.dart';
-import 'package:test_app/screens/world_time_app/home.dart';
+import 'package:test_app/screens/worldTimeApp/home.dart';
 
 import 'different_layout_activity.dart';
 import 'form_activity.dart';
