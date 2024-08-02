@@ -20,7 +20,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
     WorldTime(url: 'Asia/Seoul', location: 'Seoul', flag: 'south_korea.png'),
     WorldTime(url: 'Asia/Jakarta', location: 'Jakarta', flag: 'indonesia.png'),
     WorldTime(
-        url: 'Asia/Bangladesh', location: 'Dhaka', flag: 'bangladesh.jpeg'),
+        url: 'Asia/Dhaka', location: 'Dhaka', flag: 'bangladesh.jpeg'),
   ];
 
   void updateTime(index) async {
