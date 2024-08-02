@@ -26,17 +26,24 @@ class _LoadingState extends State<Loading> {
     print('$id - $details');
   }
 
-  void getData() async {
-    var url =
-        Uri.https('jsonplaceholder.typicode.com', '/todos/1', {'q': '{https}'});
+  void getTime() async {
+    // https://worldtimeapi.org/api/timezone/Europe/London
+    var url = Uri.https(
+        'worldtimeapi.org', '/api/timezone/Europe/London', {'q': '{https}'});
     var response = await http.get(url);
     Map data = jsonDecode(response.body);
+    print('here is data $data');
+    String dateTime = data['datetime'];
+    String offset = data['utc_offset'].substring(1, 3);
+    DateTime now = DateTime.parse(dateTime);
+    now = now.add(Duration(hours: int.parse(offset)));
+    print('now is $now');
   }
 
   @override
   void initState() {
     super.initState();
-    getData();
+    getTime();
     // simulateDelay();
   }
 
