@@ -9,8 +9,6 @@ class Loading extends StatefulWidget {
 }
 
 class _LoadingState extends State<Loading> {
-  String time = 'loading';
-
   //   simulate delay, similar with setTimeout
   void simulateDelay() async {
     String id = await Future.delayed(const Duration(seconds: 3), () {
@@ -30,8 +28,10 @@ class _LoadingState extends State<Loading> {
     WorldTime instance = WorldTime(
         location: 'Berlin', flag: 'germany.png', url: 'Europe/Berlin');
     await instance.getTime();
-    setState(() {
-      time = instance.time;
+    Navigator.pushReplacementNamed(context, '/home', arguments: {
+      'location': instance.location,
+      'flag': instance.flag,
+      'time': instance.time,
     });
   }
 
@@ -44,10 +44,10 @@ class _LoadingState extends State<Loading> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Padding(
         padding: EdgeInsets.all(55.0),
-        child: Text(time),
+        child: Text('Loading...'),
       ),
     );
   }
