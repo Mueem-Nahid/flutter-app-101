@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.orangeAccent,
         ),
       ),
+      debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
         '/': (context) => const Loading(),
