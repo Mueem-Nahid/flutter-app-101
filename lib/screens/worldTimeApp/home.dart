@@ -38,7 +38,7 @@ class _HomeState extends State<Home> {
                 TextButton.icon(
                   onPressed: () async {
                     dynamic result = await Navigator.pushNamed(
-                        context, '/location');
+                        context, '/world-time-location');
                     setState(() {
                       data = {
                         'location': result['location'],
