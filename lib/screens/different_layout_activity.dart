@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:test_app/screens/quotes_activity.dart';
-import 'package:test_app/screens/tab_activity.dart';
 
 import '../components/alert_dialogue.dart';
 import '../components/snack_bar.dart';
-import 'form_activity.dart';
-import 'list_view_activity.dart';
-import 'my_id_card_activity.dart';
 
 class HomeActivity extends StatelessWidget {
   const HomeActivity({super.key});
@@ -227,62 +222,6 @@ class HomeActivity extends StatelessWidget {
                               },
                               style: buttonStyle,
                               child: const Text('Confirm dialogue'),
-                            ),
-                            ElevatedButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => MyFormActivity()),
-                                );
-                              },
-                              style: buttonStyle,
-                              child: const Text('Form'),
-                            ),
-                            ElevatedButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          MyListViewActivity()),
-                                );
-                              },
-                              style: buttonStyle,
-                              child: const Text('List/Grid view'),
-                            ),
-                            ElevatedButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => MyTabBarActivity()),
-                                );
-                              },
-                              style: buttonStyle,
-                              child: const Text('Tab Activity'),
-                            ),
-                            ElevatedButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => MyId()),
-                                );
-                              },
-                              style: buttonStyle,
-                              child: const Text('My ID'),
-                            ),
-                            ElevatedButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => QuoteList()),
-                                );
-                              },
-                              style: buttonStyle,
-                              child: const Text('Quotes'),
                             ),
                           ]),
                     ),
